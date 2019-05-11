@@ -1,0 +1,128 @@
+@terminal
+sudo apt update
+sudo apt install python3-pip
+pip3 install numpy
+pip3 --version
+python3 //enter python
+
+
+ctr+d// exit python 
+
+@python
+import numpy as np
+a=np.array([1,2,3])
+a
+a.dtype//result = int64
+
+a=np.arange(1,12,2)
+a //array([ 1,  3,  5,  7,  9, 11])
+a.dtype //result = int64
+
+a=np.linspace(1,12,6)
+a// array([ 1. ,  3.2,  5.4,  7.6,  9.8, 12. ])
+a.dtype//dtype('float64')
+a=a.reshape(3,2)
+a      //array([[ 1. ,  3.2],
+               [ 5.4,  7.6],
+               [ 9.8, 12. ]])
+a.size //6 element
+a.shpae //(3, 2) dimension array
+a.itemsize //8 bit per element
+
+b=np.array([(1,2,3),(4,5,6)])
+b //   array([[1, 2, 3],
+              [4, 5, 6]])
+b<4  //array([[ True,  True,  True],
+             [False, False, False]])
+
+b=b*2 // array([[ 2,  4,  6],
+                [ 8, 10, 12]])
+
+c=np.zeros((3,2))
+c // array([[0., 0.],
+            [0., 0.],
+            [0., 0.]])
+
+c.dtype
+//dtype('float64')
+
+>>> d=np.ones((3,2))
+>>> d
+array([[1., 1.],
+       [1., 1.],
+       [1., 1.]])
+
+>>> e=np.array([2,3,4],dtype=np.int8)
+>>> e
+array([2, 3, 4], dtype=int8)
+>>> e.dtype
+dtype('int8')
+>>> e=np.array([2,3,4],dtype=np.int8)
+>>> e
+array([2, 3, 4], dtype=int8)
+>>> e.dtype
+dtype('int8')
+
+>>> e=np.random.random((2,3))
+>>> e
+array([[0.71700726, 0.43996682, 0.33186616],
+       [0.62819744, 0.23901601, 0.76204218]])
+>>> e.dtype
+dtype('float64')
+>>> e.itemsize
+8
+>>> np.set_printoptions(precision=2,suppress=True)
+>>> e
+array([[0.72, 0.44, 0.33],
+       [0.63, 0.24, 0.76]])
+
+>>> f=np.random.random((2,3))
+>>> f
+array([[0.27, 0.75, 0.47],
+       [0.6 , 0.74, 0.93]])
+>>> f.dtype
+dtype('float64')
+>>> f.itemsize
+8
+
+>>> f=np.random.randint(0,10,5)
+>>> f
+array([1, 3, 2, 9, 4])
+>>> f.dtype
+dtype('int64')
+>>> f.itemsize
+8
+>>> f.sum()
+19
+>>> f.min()
+1
+>>> f.max()
+9
+>>> f.var()
+7.760000000000001
+>>> f.std()
+2.785677655436824
+
+>>> g=np.array([1,2,3,4,5,6])
+>>> g
+array([1, 2, 3, 4, 5, 6])
+>>> g=g.reshape(3,2)
+>>> g
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+>>> g.sum(axis=1)
+array([ 3,  7, 11])
+>>> g.sum(axis=0)
+array([ 9, 12])
+
+>>> h=np.array([1,2,3,4,5,6])
+>>> np.random.shuffle(h)
+>>> h
+array([5, 2, 6, 1, 3, 4])
+>>> np.random.choice(h)
+2
+>>> np.random.choice(h)
+4
+
+ctr+d // exit
