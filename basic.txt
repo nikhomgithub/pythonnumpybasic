@@ -4,6 +4,7 @@ sudo apt install python3-pip
 pip3 install numpy
 pip3 --version
 python3 //enter python
+python3 --version
 
 
 ctr+d// exit python 
