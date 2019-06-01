@@ -478,15 +478,133 @@ result[1]
  
  
  
+a=np.arange(6).reshape(3,2)
+//array([[0, 1],
+       [2, 3],
+       [4, 5]]) 
+ b=a>3
+ //array([[False, False],
+       [False, False],
+       [ True,  True]])
+ b.dtype
+ //dtype('bool')
  
+ a[b]
+ //array([4, 5])
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ a[b]=-1
+ array([[ 0,  1],
+       [ 2,  3],
+       [-1, -1]])//Change to -1 at True
+       
+       
+       
+       
+ //a in nditor   
+ a=np.arange(12).reshape(3,4)
+ a     
+ //array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11]])       
+       
+for row in a:
+    print(row)      
+//[0 1 2 3]
+[4 5 6 7]
+[ 8  9 10 11]
+       
+for row in a:
+    for cell in row:
+        print(cell)
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+       
+       
+for cell in a.flatten():
+        print(cell)       
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11      
+//========================== 
+a
+
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11]])
+       
+for x in np.nditer(a,order='C'): //C is capital
+    print(x)       
+ 0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11   
+
+
+for x in np.nditer(a,order='F'): //F is capital
+    print(x)
+0
+4
+8
+1
+5
+9
+2
+6
+10
+3
+7
+11
+
+
+for x in np.nditer(a,order='F',flags=['external_loop']):
+    print(x)
+
+[0 4 8]
+[1 5 9]
+[ 2  6 10]
+[ 3  7 11]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
