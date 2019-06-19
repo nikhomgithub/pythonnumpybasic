@@ -14,6 +14,7 @@ import numpy as np
 a=np.array([1,2,3])
 a
 a.dtype//result = int64
+//a=np.arange(1,12,2,dtype="int32")
 
 a=np.array([1,2,3],dtype="float64")
 //array([1., 2., 3.])
@@ -75,7 +76,7 @@ array([[0.71700726, 0.43996682, 0.33186616],
 >>> e.dtype
 dtype('float64')
 >>> e.itemsize
-8
+8 (bit)
 >>> np.set_printoptions(precision=2,suppress=True)
 >>> e
 array([[0.72, 0.44, 0.33],
@@ -127,10 +128,17 @@ b
 //array([[16, 78, 23, 43, 34],
 //       [85, 77, 68, 20, 54]])
 
-np.random.shuffle(b)
-b
-//array([[16, 78, 23, 43, 34],
-//       [85, 77, 68, 20, 54]])
+
+a=np.arange(10)
+a
+//array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+np.random.shuffle(a)
+a
+//array([2, 6, 8, 1, 3, 4, 7, 0, 5, 9])
+a.sort()
+a
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
 
 
 >>> h=np.array([1,2,3,4,5,6])
